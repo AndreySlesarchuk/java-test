@@ -4,20 +4,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *  @author Andrey Slesarchuk
- *  @date 2022-06-06
+ *  @date 2022-06-07
  */
 
 public class Test5 {
 
   public static void main(String[] args) {
 
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
 
-    Dog myDog = context.getBean("myPet", Dog.class);
-    myDog.say();
-
-    Dog yourDog = context.getBean("myPet", Dog.class);
-    yourDog.say();
+    Pet myPet = context.getBean("cat", Pet.class);
+    myPet.say();
 
     context.close();
 
