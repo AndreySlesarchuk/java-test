@@ -1,16 +1,30 @@
 package by.atmm.javaspringtestproject.spring_introduction;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  *  @author Andrey Slesarchuk
  *  @date 2022-06-02
  */
 
 
+@Component("personBean")
 public class Person {
-
+  @Autowired
+  private Pet pet;
   String surname;
-
   int age;
+
+    public Person() {
+      System.out.println("Person bean is created!");
+    }
+
+//  @Autowired
+//  public Person(Pet pet) {
+//    System.out.println("Person bean is created!");
+//    this.pet = pet;
+//  }
 
   public String getSurname() {
     return surname;
@@ -30,18 +44,8 @@ public class Person {
     this.age = age;
   }
 
-  private Pet pet;
-
-  public Person() {
-    System.out.println("Person bean is created!");
-  }
-
-  public Person(Pet pet) {
-    System.out.println("Person bean is created!");
-    this.pet = pet;
-  }
-
   // pet -> setPet
+  @Autowired
   public void setPet(Pet pet) {
     System.out.println("Class Person: set pet!");
     this.pet = pet;

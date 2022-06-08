@@ -1,5 +1,7 @@
 package by.atmm.javaspringtestproject.spring_introduction;
 
+import org.springframework.stereotype.Component;
+
 /**
  *  @author Andrey Slesarchuk
  *  @date 2022-06-01

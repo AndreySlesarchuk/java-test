@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  *  @date 2022-06-01
  */
 
-@Component
+@Component("catBean")
 public class Cat implements Pet {
   public Cat() {
     System.out.println("Cat bean is created!");

@@ -11,9 +11,9 @@ public class Test5 {
 
   public static void main(String[] args) {
 
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
 
-    Pet myPet = context.getBean("cat", Pet.class);
+    Pet myPet = context.getBean("myPet", Pet.class);
     myPet.say();
 
     context.close();
