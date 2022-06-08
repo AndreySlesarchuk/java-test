@@ -7,19 +7,10 @@ import org.springframework.stereotype.Component;
  *  @date 2022-06-01
  */
 
-
+@Component
 public class Dog implements Pet {
 
 //  private String name;
-//
-//  public String getName() {
-//    return name;
-//  }
-//
-//  public void setName(String name) {
-//    this.name = name;
-//  }
-
 
   public Dog() {
     System.out.println("Dog bean is created!");
@@ -37,5 +28,14 @@ public class Dog implements Pet {
   private void destroy() {
     System.out.println("Class Dog: destroy method");
   }
+
+  //  public String getName() {
+  //    return name;
+  //  }
+  //
+  //  public void setName(String name) {
+  //    this.name = name;
+  //  }
+
 
 }
