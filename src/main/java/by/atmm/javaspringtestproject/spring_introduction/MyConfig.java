@@ -1,11 +1,9 @@
 package by.atmm.javaspringtestproject.spring_introduction;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@PropertySource("classpath:MyApp.properties")
 // @ComponentScan("by.atmm.javaspringtestproject.spring_introduction")
 public class MyConfig {
 
