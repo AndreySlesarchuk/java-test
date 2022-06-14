@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author Andrey Slesarchuk
- * @date 2022-06-13
+ * @date 2022-06-14
  */
 
 @Component
@@ -16,6 +16,7 @@ public class UniLibrary extends AbstractLibrary {
     }
 
     public String returnBook() {
+        // int i = 10/0; // for exception,
         System.out.println("We are returning a book to UniLibrary: War and Peace");
         return "War and Peace";
     }

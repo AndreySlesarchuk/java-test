@@ -14,7 +14,16 @@ public class NewLoggingAspect {
         System.out.println("arroundReturnLoggingAdvice: trying to return the book to the library");
 
         long begin = System.currentTimeMillis();
-        Object targetMethodResult = proceedingJoinPoint.proceed();
+
+        Object targetMethodResult = null;
+        try {
+            targetMethodResult = proceedingJoinPoint.proceed();
+        } catch (Exception e) {
+            System.out.println("arroundReturnLoggingAdvice: exception was logged: " + e);
+            targetMethodResult = "Unknown book";
+            throw e;
+        }
+
         long end = System.currentTimeMillis();
         System.out.println("Time of the method's work: " + (end - begin) + " milliseconds");
 
