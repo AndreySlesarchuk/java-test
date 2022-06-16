@@ -53,10 +53,10 @@ public class LoggingAspect {
         System.out.println("beforeReturnBookAdvice: Trying to get a book or magazine");
     }
 
-//    @AfterReturning(pointcut = "execution(* returnBook(..)) || allReturnMethodsFromUniLibrary()", returning = "bookName")
-//    public void afterReturningBookAdvice(String bookName) {
-//        System.out.println("afterReturnBookAdvice: Trying to return a book or magazine");
-//        bookName = "Peace and Peace";
-//    }
+    @AfterReturning(pointcut = "execution(* returnBook(..)) || allReturnMethodsFromUniLibrary()", returning = "bookName")
+    public void afterReturningBookAdvice(String bookName) {
+        System.out.println("afterReturnBookAdvice: Trying to return a book or magazine");
+        bookName = "Peace and Peace";
+    }
 
 }
