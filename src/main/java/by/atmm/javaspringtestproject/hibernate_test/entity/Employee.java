@@ -1,9 +1,6 @@
 package by.atmm.javaspringtestproject.hibernate_test.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *  @author Andrey Slesarchuk
@@ -15,6 +12,7 @@ import javax.persistence.Table;
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
