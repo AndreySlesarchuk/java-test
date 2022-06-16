@@ -6,24 +6,21 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- *  @author Andrey Slesarchuk
- *  @date 2022-06-16
+ * @author Andrey Slesarchuk
+ * @date 2022-06-16
  */
 
 public class Test2 {
     public static void main(String[] args) {
 
-        SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
-                .buildSessionFactory();
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).buildSessionFactory();
         try {
 
             Session session = factory.getCurrentSession();
 
 //            Employee emp = new Employee("Vasily", "Ivanov", "Sales", 800);
             Employee emp = new Employee("Andrey", "Vasilyev", "IT", 700);
-            //Employee emp = new Employee("Mike", "Andreev", "HR", 600);
+//            Employee emp = new Employee("Mike", "Andreev", "HR", 600);
 
             session.beginTransaction();
             session.save(emp);

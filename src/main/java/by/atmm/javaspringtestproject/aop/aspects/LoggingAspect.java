@@ -40,7 +40,9 @@ public class LoggingAspect {
         System.out.println("methodSignature.getName() = " + methodSignature.getName());
 
         String fullName = joinPoint.toLongString();
-        System.out.println("JoinPoint method long Name: " + fullName);
+        String shortName = joinPoint.toShortString();
+        System.out.println("JoinPoint method short string: " + shortName);
+        System.out.println("JoinPoint method long string: " + fullName);
 
         Object[] arguments = joinPoint.getArgs();
         Arrays.stream(arguments)
