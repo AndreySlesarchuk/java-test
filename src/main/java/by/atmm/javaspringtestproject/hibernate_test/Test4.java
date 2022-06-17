@@ -12,7 +12,7 @@ import java.util.List;
  *  @date 2022-06-16
  */
 
-public class Test3 {
+public class Test4 {
     public static void main(String[] args) {
 
         SessionFactory factory = new Configuration()
@@ -24,17 +24,11 @@ public class Test3 {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-//            List<Employee> emps = session.createQuery("from Employee").getResultList();
-//            for (Employee e : emps) {
-//                System.out.println(e);
-//            }
+            Employee emp = session.get(Employee.class, 1);
+            emp.setSalary(1100);
 
-            List<Employee> emps = session
-                    .createQuery("FROM Employee WHERE name = 'Andrey' AND salary > 500")
-                    .getResultList();
-            for (Employee e : emps) {
-                System.out.println(e);
-            }
+            session.createQuery("UPDATE Employee SET salary = 1000 WHERE name = 'Andrey'")
+                    .executeUpdate();
 
             session.getTransaction().commit();
 
