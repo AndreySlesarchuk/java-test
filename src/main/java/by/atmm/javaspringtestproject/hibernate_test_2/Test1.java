@@ -9,6 +9,23 @@ import org.hibernate.cfg.Configuration;
 /**
  *  @author Andrey Slesarchuk
  *  @date 2022-06-20
+ *
+ *  DROP TABLE my_db.employees;
+ *  CREATE TABLE my_db.details (
+ *   id int NOT NULL AUTO_INCREMENT,
+ *   city varchar(15),
+ *   phone_number varchar(25),
+ *   email varchar(30), PRIMARY KEY (id)
+ * );
+ *
+ * CREATE TABLE my_db.employees (
+ *   id int NOT NULL AUTO_INCREMENT,
+ *   name varchar(15),
+ *   surname varchar(25),
+ *   department varchar(20), salary int, details_id int
+ * ,  PRIMARY KEY (id)
+ * , FOREIGN KEY (details_id) REFERENCES my_db.details(id));
+ *
  */
 
 public class Test1 {
@@ -25,27 +42,32 @@ public class Test1 {
         try {
             session = factory.getCurrentSession();
             // create Detail
-//            Employee employee = new Employee("Vasiliy", "Ivanov", "HR", 1000);
-//            Detail detail = new Detail("Brest", "+3751611111111", "vi@brest.by");
-//            Employee employee = new Employee("Mike", "Andreev", "IT", 700);
-//            Detail detail = new Detail("Minsk", "+3751711111111", "ma@minsk.by");
-//
-//            employee.setEmpDetail(detail);
-//            session.beginTransaction();
-//            session.save(employee);
-//            session.getTransaction().commit();
-//            System.out.println("Done!");
+            Employee emp1 = new Employee("Vasiliy", "Ivanov", "HR", 1000);
+            Detail detail1 = new Detail("Brest", "+3751611111111", "vi@atmm.by");
+            Employee emp2 = new Employee("Andrey", "Vasilyev", "sale", 800);
+            Detail detail2 = new Detail("Minsk", "+3751711111111", "av@atmm.by");
+            Employee emp3 = new Employee("Mike", "Andreev", "IT", 700);
+            Detail detail3 = new Detail("Minsk", "+3751722222222", "ma@atmm.by");
 
-            // get Detail
-//            session.beginTransaction();
-//            Employee emp = session.get(Employee.class, 2);
-//            Detail detail = new Detail("Minsk", "+3751711111111", "ma@minsk.by");
-//            System.out.println(emp.getEmpDetail());
+            emp1.setEmpDetail(detail1);
+            session.beginTransaction();
+            session.save(emp1);
+            emp2.setEmpDetail(detail2);
+            session.save(emp2);
+            emp3.setEmpDetail(detail3);
+            session.save(emp3);
+            //session.getTransaction().commit();
+
+             //get Detail
+            //session.beginTransaction();
+            Employee emp4= session.get(Employee.class, 2);
+            //Detail detail = new Detail("Minsk", "+3751711111111", "ma@minsk.by");
+            System.out.println("--------> emp4: " + emp4.getEmpDetail());
 
             //delete Employee
-            session.beginTransaction();
-            Employee emp = session.get(Employee.class, 2);
-            session.delete(emp);
+            //session.beginTransaction();
+            Employee emp5 = session.get(Employee.class, 2);
+            session.delete(emp5);
 
             session.getTransaction().commit();
             System.out.println("Done!");

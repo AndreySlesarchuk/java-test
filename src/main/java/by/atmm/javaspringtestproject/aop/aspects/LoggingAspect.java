@@ -28,7 +28,6 @@ public class LoggingAspect {
     private void allBookMethods() {
     }
 
-
     @Before("execution(public void *Book(..))")
     public void beforeGetBookAdvice(JoinPoint joinPoint) {
         System.out.println("beforeGetBookAdvice: Trying to get a book or magazine");
@@ -41,6 +40,7 @@ public class LoggingAspect {
 
         String fullName = joinPoint.toLongString();
         String shortName = joinPoint.toShortString();
+        System.out.println("JoinPoint: " + joinPoint);
         System.out.println("JoinPoint method short string: " + shortName);
         System.out.println("JoinPoint method long string: " + fullName);
 
