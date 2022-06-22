@@ -28,14 +28,6 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
-    public Detail getEmpDetail() {
-        return empDetail;
-    }
-
-    public void setEmpDetail(Detail empDetail) {
-        this.empDetail = empDetail;
-    }
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "details_id")
     private Detail empDetail;
@@ -94,4 +86,12 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+    public Detail getEmpDetail() { return empDetail; }
+
+    public void setEmpDetail(Detail empDetail) {
+        this.empDetail = empDetail;
+    }
+
+
 }
