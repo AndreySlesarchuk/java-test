@@ -1,14 +1,14 @@
-package by.atmm.javaspringtestproject.hibernate_test_2;
+package by.atmm.javaspringtestproject.hibernate_one_to_one;
 
-import by.atmm.javaspringtestproject.hibernate_test_2.entity.Detail;
-import by.atmm.javaspringtestproject.hibernate_test_2.entity.Employee;
+import by.atmm.javaspringtestproject.hibernate_one_to_one.entity.Detail;
+import by.atmm.javaspringtestproject.hibernate_one_to_one.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
  *  @author Andrey Slesarchuk
- *  @date 2022-06-20
+ *  @date 2022-06-22
  *
  *  DROP TABLE my_db.employees;
  *  CREATE TABLE my_db.details (
@@ -28,7 +28,7 @@ import org.hibernate.cfg.Configuration;
  *
  */
 
-public class Test1 {
+public class Test2 {
     public static void main(String[] args) {
 
         SessionFactory factory = new Configuration()
@@ -41,7 +41,7 @@ public class Test1 {
         Session session = factory.getCurrentSession();
         try {
             session = factory.getCurrentSession();
-            // create Detail
+            // data create
             Employee emp1 = new Employee("Vasiliy", "Ivanov", "HR", 1000);
             Detail detail1 = new Detail("Brest", "+3751611111111", "vi@atmm.by");
             Employee emp2 = new Employee("Andrey", "Vasilyev", "sale", 800);
@@ -49,27 +49,28 @@ public class Test1 {
             Employee emp3 = new Employee("Mike", "Andreev", "IT", 700);
             Detail detail3 = new Detail("Minsk", "+3751722222222", "ma@atmm.by");
 
-            emp1.setEmpDetail(detail1);
+//            emp1.setEmpDetail(detail1);
+//            detail1.setEmployee(emp1);
+//            emp2.setEmpDetail(detail2);
+//            detail2.setEmployee(emp2);
+//            emp3.setEmpDetail(detail3);
+//            detail3.setEmployee(emp3);
+//
+//            session.beginTransaction();
+//            session.save(detail1);
+//            session.save(detail2);
+//            session.save(detail3);
+//            session.getTransaction().commit();
+
             session.beginTransaction();
-            session.save(emp1);
-            emp2.setEmpDetail(detail2);
-            session.save(emp2);
-            emp3.setEmpDetail(detail3);
-            session.save(emp3);
-            //session.getTransaction().commit();
-
-             //get Detail
-            //session.beginTransaction();
-            Employee emp4= session.get(Employee.class, 2);
-            //Detail detail = new Detail("Minsk", "+3751711111111", "ma@minsk.by");
-            System.out.println("--------> emp4: " + emp4.getEmpDetail());
-
-            //delete Employee
-            //session.beginTransaction();
-            Employee emp5 = session.get(Employee.class, 2);
-            session.delete(emp5);
-
+            Employee employee = session.get(Employee.class, 3);
+            session.delete(employee);
+            Detail detail = session.get(Detail.class, 4);
+            // Clearing the foreign key
+            detail.getEmployee().setEmpDetail(null);
+            session.delete(detail);
             session.getTransaction().commit();
+
             System.out.println("Done!");
 
         } finally {
