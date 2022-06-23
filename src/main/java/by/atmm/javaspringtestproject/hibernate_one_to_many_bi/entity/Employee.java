@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * @author Andrey Slesarchuk
- * @date 2022-06-22
+ * @date 2022-06-23
  */
 
 @Entity
