@@ -31,7 +31,7 @@ public class Test1 {
             dept.addEmployeeToDepartment(emp2);
 
             session.beginTransaction();
-            session.save(dept);
+            session.persist(dept);
             session.getTransaction().commit();
 
             System.out.println("Done!");

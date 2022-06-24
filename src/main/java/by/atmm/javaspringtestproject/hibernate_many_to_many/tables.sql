@@ -1,3 +1,8 @@
+
+DROP TABLE my_db.child_section;
+DROP TABLE my_db.children;
+DROP TABLE my_db.section;
+
 CREATE TABLE my_db.children
 (
     id   int NOT NULL AUTO_INCREMENT,
