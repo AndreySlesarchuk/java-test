@@ -4,6 +4,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  @author Andrey Slesarchuk
+ *  @date 2022-06-19
+ */
+
 @Entity
 @Table(name = "department")
 public class Department {
