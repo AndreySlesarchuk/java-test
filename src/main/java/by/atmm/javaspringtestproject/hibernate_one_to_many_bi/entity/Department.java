@@ -4,6 +4,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  @author Andrey Slesarchuk
+ *  @date 2022-06-19
+ */
+
 @Entity
 @Table(name = "department")
 public class Department {
@@ -22,8 +27,7 @@ public class Department {
     private Integer minSalary;
 
     @OneToMany(mappedBy = "department",
-            //cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE})
-            cascade = {CascadeType.ALL})
+            cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE})
     List<Employee> emps;
 
     public Department() {
