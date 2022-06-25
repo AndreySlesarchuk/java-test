@@ -15,6 +15,8 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
+        int i = Integer.parseInt(args[0]) + Integer.parseInt(args[1]);
+
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Child.class)
