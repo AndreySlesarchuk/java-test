@@ -7,36 +7,31 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- *  @author Andrey Slesarchuk
- *  @date 2022-06-20
- *
- *  DROP TABLE my_db.employees;
- *  CREATE TABLE my_db.details (
- *   id int NOT NULL AUTO_INCREMENT,
- *   city varchar(15),
- *   phone_number varchar(25),
- *   email varchar(30), PRIMARY KEY (id)
+ * @author Andrey Slesarchuk
+ * @date 2022-06-20
+ * <p>
+ * DROP TABLE my_db.employees;
+ * CREATE TABLE my_db.details (
+ * id int NOT NULL AUTO_INCREMENT,
+ * city varchar(15),
+ * phone_number varchar(25),
+ * email varchar(30), PRIMARY KEY (id)
  * );
- *
+ * <p>
  * CREATE TABLE my_db.employees (
- *   id int NOT NULL AUTO_INCREMENT,
- *   name varchar(15),
- *   surname varchar(25),
- *   department varchar(20), salary int, details_id int
+ * id int NOT NULL AUTO_INCREMENT,
+ * name varchar(15),
+ * surname varchar(25),
+ * department varchar(20), salary int, details_id int
  * ,  PRIMARY KEY (id)
  * , FOREIGN KEY (details_id) REFERENCES my_db.details(id));
- *
  */
 
 public class Test1 {
     public static void main(String[] args) {
 
-        SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Detail.class)
-                .buildSessionFactory();
-
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Detail.class).buildSessionFactory();
 
         Session session = factory.getCurrentSession();
         try {
@@ -58,9 +53,9 @@ public class Test1 {
             session.save(emp3);
             //session.getTransaction().commit();
 
-             //get Detail
+            //get Detail
             //session.beginTransaction();
-            Employee emp4= session.get(Employee.class, 2);
+            Employee emp4 = session.get(Employee.class, 2);
             //Detail detail = new Detail("Minsk", "+3751711111111", "ma@minsk.by");
             System.out.println("--------> emp4: " + emp4.getEmpDetail());
 
