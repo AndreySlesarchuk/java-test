@@ -20,13 +20,10 @@
         <module>spring_course_mvc</module>
     </modules>
 
-
     <dependencies>
-
     </dependencies>
 
     <build>
-
     </build>
 
 </project>
