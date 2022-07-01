@@ -20,6 +20,7 @@ public class Test1 {
         Session session = factory.getCurrentSession();
         try {
             session = factory.getCurrentSession();
+            session.beginTransaction();
 
             Department dept = new Department("IT", 500, 1000);
             Employee emp1 = new Employee("Vasiliy", "Ivanov", 1000);
@@ -28,7 +29,7 @@ public class Test1 {
             dept.addEmployeeToDepartment(emp1);
             dept.addEmployeeToDepartment(emp2);
 
-            session.beginTransaction();
+
             session.persist(dept);
             session.getTransaction().commit();
 

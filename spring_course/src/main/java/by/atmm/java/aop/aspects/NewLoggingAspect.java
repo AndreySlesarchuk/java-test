@@ -11,6 +11,7 @@ public class NewLoggingAspect {
 
     @Around("execution(public String returnBook())")
     public Object arroundReturnBookLoggingAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        // JoinPoint does not work here ...
         System.out.println("arroundReturnLoggingAdvice: trying to return the book to the library");
 
         long begin = System.currentTimeMillis();
