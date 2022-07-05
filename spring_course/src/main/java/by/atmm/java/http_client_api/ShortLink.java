@@ -41,7 +41,7 @@ public class ShortLink {
             throw new IllegalArgumentException("Short link: data to work is not correct " + map.toString());
         }
 
-        if (responseMap.get("successful").equals(true)) {
+        if (responseMap.get("message").equals("Link successfully created")) {
             return responseMap.get("short_url").toString();
         } else {
             return "";
