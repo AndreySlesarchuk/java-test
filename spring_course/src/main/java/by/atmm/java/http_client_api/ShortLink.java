@@ -38,7 +38,7 @@ public class ShortLink {
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             responseMap = objectMapper.readValue(response.body(), Map.class);
         } catch (Exception e) {
-            throw new IllegalArgumentException("Short link: data to work is not correct " + map.toString());
+            throw new IllegalArgumentException("Short link: data to work is not correct " + e);
         }
 
         if (responseMap.get("message").equals("Link successfully created")) {
