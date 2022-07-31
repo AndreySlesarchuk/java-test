@@ -1,4 +1,4 @@
-package by.atmm.java.early.tregulov_alishev.regex;
+package by.atmm.java.early.treali.regex;
 
 import java.util.regex.Pattern;
 

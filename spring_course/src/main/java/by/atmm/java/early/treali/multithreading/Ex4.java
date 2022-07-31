@@ -1,4 +1,4 @@
-package by.atmm.java.early.tregulov_alishev.multithreading;
+package by.atmm.java.early.treali.multithreading;
 
 public class Ex4 {
   public static void main(String[] args) {

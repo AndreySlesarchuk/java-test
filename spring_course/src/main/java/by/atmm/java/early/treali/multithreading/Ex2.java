@@ -1,4 +1,4 @@
-package by.atmm.java.early.tregulov_alishev.multithreading;
+package by.atmm.java.early.treali.multithreading;
 
 public class Ex2 extends Thread {
   public void run() {

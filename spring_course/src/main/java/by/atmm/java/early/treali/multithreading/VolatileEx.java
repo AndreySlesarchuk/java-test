@@ -1,4 +1,4 @@
-package by.atmm.java.early.tregulov_alishev.multithreading;
+package by.atmm.java.early.treali.multithreading;
 
 public class VolatileEx extends Thread{
   volatile boolean b = true;

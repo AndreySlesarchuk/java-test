@@ -1,17 +1,14 @@
-package by.atmm.java.early.tregulov_alishev.multithreading;
+package by.atmm.java.early.treali.multithreading;
 
-public class SynchronizedBlock2 {
+public class Ex11 {
   volatile static int counter = 0;
-
-  public static void increment() {
-    synchronized (SynchronizedBlock2.class) {
-      counter++;
-    }
+  public static synchronized void increment() {
+    counter++;
   }
 
   public static void main(String[] args) throws InterruptedException {
-    Thread thread1 = new Thread(new R2());
-    Thread thread2 = new Thread(new R2());
+    Thread thread1 = new Thread(new R());
+    Thread thread2 = new Thread(new R());
     thread1.start();
     thread2.start();
     thread1.join();
@@ -21,7 +18,7 @@ public class SynchronizedBlock2 {
   }
 }
 
-class R2 implements Runnable {
+class R implements Runnable {
 
   @Override
   public void run() {

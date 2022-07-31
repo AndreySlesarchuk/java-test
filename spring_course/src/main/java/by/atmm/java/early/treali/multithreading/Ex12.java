@@ -1,4 +1,4 @@
-package by.atmm.java.early.tregulov_alishev.multithreading;
+package by.atmm.java.early.treali.multithreading;
 
 public class Ex12 {
   static final Object lock = new Object();
