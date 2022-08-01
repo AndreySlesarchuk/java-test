@@ -19,7 +19,7 @@ public class StringTemplate {
     valuesMap.put("user.name", "Николай Петрович");
     valuesMap.put("user.address", "Минск, Волгоградская улица, дом 52");
     valuesMap.put("date", "22 октября 2020 в 19:00");
-    com.example.other.templates.stringtemplate.StrSubstitutor sub = new com.example.other.templates.stringtemplate.StrSubstitutor(valuesMap);
+    by.atmm.java.early.other.templates.stringtemplate.StrSubstitutor sub = new by.atmm.java.early.other.templates.stringtemplate.StrSubstitutor(valuesMap);
     String resolvedString = sub.replace(SMS_TEMPLATE);
     log.info(resolvedString);
   }

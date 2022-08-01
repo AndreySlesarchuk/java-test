@@ -14,7 +14,7 @@ public class ExampleReflections {
 
   public static void main(String[] args) {
 
-    Reflections reflections = new Reflections("com.example.other.annotations");
+    Reflections reflections = new Reflections("by.atmm.java.early.other.annotations");
 
     Set<Class<?>> superCats = reflections.getTypesAnnotatedWith(SuperCat.class);
 

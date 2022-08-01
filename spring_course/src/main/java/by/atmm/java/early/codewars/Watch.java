@@ -1,21 +1,21 @@
 package by.atmm.java.early.codewars;
 
 public class Watch {
-  private long startTime;
+    private long startTime;
 
-  private long endTime;
+    private long endTime;
 
-  public void start() {
-    startTime = System.nanoTime();
-  }
+    public void start() {
+        startTime = System.nanoTime();
+    }
 
-  private void stop() {
-    endTime = System.nanoTime();
-  }
+    private void stop() {
+        endTime = System.nanoTime();
+    }
 
-  public void totalTime(String s) {
-    stop();
-    System.out.println(s + (endTime - startTime)); //Nanoseconds
+    public void totalTime(String s) {
+        stop();
+        System.out.println(s + (endTime - startTime)); //Nanoseconds
 
-  }
+    }
 }

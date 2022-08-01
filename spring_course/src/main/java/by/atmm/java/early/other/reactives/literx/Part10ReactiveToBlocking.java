@@ -1,6 +1,6 @@
 package by.atmm.java.early.other.reactives.literx;
 
-import com.example.other.reactives.literx.domain.User;
+import by.atmm.java.early.other.reactives.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

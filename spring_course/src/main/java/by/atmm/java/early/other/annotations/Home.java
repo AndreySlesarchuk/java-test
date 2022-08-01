@@ -37,7 +37,7 @@ public class Home {
 
   public static void main(String[] args) throws Exception {
 
-    String packageName = "com.example.other.annotations";
+    String packageName = "by.atmm.java.early.other.annotations";
     ClassLoader classLoader = Home.class.getClassLoader();
 
     String packagePath = packageName.replace('.', '/');

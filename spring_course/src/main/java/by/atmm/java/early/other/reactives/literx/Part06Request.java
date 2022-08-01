@@ -1,8 +1,8 @@
 package by.atmm.java.early.other.reactives.literx;
 
-import com.example.other.reactives.literx.domain.User;
-import com.example.other.reactives.literx.repository.ReactiveRepository;
-import com.example.other.reactives.literx.repository.ReactiveUserRepository;
+import by.atmm.java.early.other.reactives.literx.domain.User;
+import by.atmm.java.early.other.reactives.literx.repository.ReactiveRepository;
+import by.atmm.java.early.other.reactives.literx.repository.ReactiveUserRepository;
 import reactor.core.publisher.Flux;
 
 

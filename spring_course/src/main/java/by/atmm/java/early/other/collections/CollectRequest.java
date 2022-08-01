@@ -5,7 +5,7 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.example.other.utils.Watch;
+import by.atmm.java.early.other.utils.Watch;
 
 public class CollectRequest {
 

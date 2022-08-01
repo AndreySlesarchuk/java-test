@@ -1,6 +1,6 @@
 package by.atmm.java.early.other.list;
 
-import com.example.other.utils.Watch;
+import by.atmm.java.early.other.utils.Watch;
 import org.junit.Test;
 
 /**

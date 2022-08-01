@@ -1,6 +1,6 @@
 package by.atmm.java.early.other.collections;
 
-import com.example.other.utils.Watch;
+import by.atmm.java.early.other.utils.Watch;
 
 public class IntegerToString {
     public static void main(String[] args) {

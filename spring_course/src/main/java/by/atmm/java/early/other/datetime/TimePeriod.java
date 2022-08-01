@@ -7,7 +7,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 
-import com.example.other.utils.MyDateFormat;
+import by.atmm.java.early.other.utils.MyDateFormat;
+
 
 /**
  * Created by Andrey Slesarchuk on 12/14/2020.

@@ -1,7 +1,7 @@
 package by.atmm.java.early.other.reactives.literx;
 
-import com.example.other.reactives.literx.domain.User;
-import com.example.other.reactives.literx.repository.BlockingRepository;
+import by.atmm.java.early.other.reactives.literx.domain.User;
+import by.atmm.java.early.other.reactives.literx.repository.BlockingRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;

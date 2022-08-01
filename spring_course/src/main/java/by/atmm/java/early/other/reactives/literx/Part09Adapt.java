@@ -18,7 +18,7 @@ package by.atmm.java.early.other.reactives.literx;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.example.other.reactives.literx.domain.User;
+import by.atmm.java.early.other.reactives.literx.domain.User;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
