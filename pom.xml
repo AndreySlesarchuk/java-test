@@ -16,14 +16,17 @@
     </properties>
 
     <modules>
+        <module>sbur-rest-demo</module>
         <module>spring_course</module>
         <module>spring_course_mvc</module>
     </modules>
 
     <dependencies>
+
     </dependencies>
 
     <build>
+
     </build>
 
 </project>
