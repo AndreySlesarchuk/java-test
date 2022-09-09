@@ -16,6 +16,8 @@
     </properties>
 
     <modules>
+        <module>sbur-redis</module>
+        <module>planefinder</module>
         <module>sbur-rest-demo</module>
         <module>spring_course</module>
         <module>spring_course_mvc</module>
