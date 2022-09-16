@@ -1,4 +1,4 @@
-package by.atmm.java.__early.__other.templates.excel.exporter;
+package by.atmm.java.__early.__other.reactives.literx.exporter;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author Andrey Slesarchuk
  * @date 2022-09-09
- *
+ * <p>
  * Excel File Exporter
  */
 public class ExcelFileExporter {
@@ -38,7 +38,7 @@ public class ExcelFileExporter {
             sheet.autoSizeColumn(i);
         }
 
-        sheet.createFreezePane(0,1);
+        sheet.createFreezePane(0, 1);
 
         // Write to file
         try (OutputStream outputStream = new FileOutputStream(fileName)) {
