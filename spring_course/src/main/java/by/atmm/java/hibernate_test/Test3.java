@@ -8,26 +8,21 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
 /**
- *  @author Andrey Slesarchuk
- *  @date 2022-06-18
+ * @author Andrey Slesarchuk
+ * @date 2022-06-18
  */
 
 public class Test3 {
     public static void main(String[] args) {
 
-        SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
-                .buildSessionFactory();
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).buildSessionFactory();
 
         try {
-    Session session = factory.getCurrentSession();
+            Session session = factory.getCurrentSession();
             session.beginTransaction();
-            List<Employee> emps = session
-                    .createQuery("FROM Employee WHERE name = 'Andrey'")
-                    .getResultList();
+            List<Employee> emps = session.createQuery("FROM Employee WHERE name = 'Andrey'").getResultList();
 
-            for (Employee e: emps)
+            for (Employee e : emps)
                 System.out.println(e);
 
             session.getTransaction().commit();

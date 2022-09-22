@@ -6,19 +6,17 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- *  @author Andrey Slesarchuk
- *  @date 2022-06-17
+ * @author Andrey Slesarchuk
+ * @date 2022-06-17
  */
 
 public class Test2 {
     public static void main(String[] args) {
 
-        SessionFactory factory = new Configuration()
+        try (SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                .buildSessionFactory();
-
-        try {
+                .buildSessionFactory()) {
 
             Employee emp = new Employee("Vasily", "Ivanov", "Sales", 800);
 
@@ -33,13 +31,8 @@ public class Test2 {
             Employee employee = session.get(Employee.class, myId);
             session.getTransaction().commit();
             System.out.println(employee);
-
             System.out.println("Done!");
 
-        } finally {
-            factory.close();
         }
-
     }
-
 }

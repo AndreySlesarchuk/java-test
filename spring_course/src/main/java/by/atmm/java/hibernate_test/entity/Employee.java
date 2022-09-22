@@ -3,8 +3,8 @@ package by.atmm.java.hibernate_test.entity;
 import javax.persistence.*;
 
 /**
- *  @author Andrey Slesarchuk
- *  @date 2022-06-15
+ * @author Andrey Slesarchuk
+ * @date 2022-06-15
  */
 
 @Entity
