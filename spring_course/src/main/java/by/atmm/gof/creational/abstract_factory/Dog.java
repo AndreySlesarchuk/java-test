@@ -1,9 +1,8 @@
 package by.atmm.gof.creational.abstract_factory;
 
 public class Dog implements Animal {
-
     @Override
-    public String getAnimal() {
+    public String getType() {
         return "Dog";
     }
 
@@ -11,4 +10,5 @@ public class Dog implements Animal {
     public String makeSound() {
         return "Woff";
     }
+
 }
