@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Database2 {
-    private String name = "main2.db";
+    private static final String NAME = "main2.db";
 
-    private List<String> data = new ArrayList<>();
+    private final List<String> data = new ArrayList<>();
     private static Database2 instance = null;
 
     private Database2() {
@@ -26,7 +26,7 @@ public class Database2 {
     }
 
     public String getName() {
-        return name;
+        return NAME;
     }
 
 }
