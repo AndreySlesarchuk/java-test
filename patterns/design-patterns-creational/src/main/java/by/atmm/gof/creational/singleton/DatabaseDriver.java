@@ -16,8 +16,5 @@ public class DatabaseDriver {
         for (String i: db3.getData()) {
             System.out.println(i);
         }
-
-
-
     }
 }

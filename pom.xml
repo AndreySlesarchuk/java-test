@@ -16,6 +16,7 @@
     </properties>
 
     <modules>
+        <module>patterns</module>
         <module>sbur-jpa</module>
         <module>sbur-redis</module>
         <module>planefinder</module>
