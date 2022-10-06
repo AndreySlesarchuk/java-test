@@ -16,6 +16,7 @@
     </properties>
 
     <modules>
+        <module>pdf</module>
         <module>patterns</module>
         <module>sbur-jpa</module>
         <module>sbur-redis</module>
