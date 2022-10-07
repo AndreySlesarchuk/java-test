@@ -43,12 +43,7 @@ class DataLoader {
 
     @PostConstruct
     private void loadData() {
-        coffeeRepository.saveAll(List.of(
-                new Coffee("Café Cereza"),
-                new Coffee("Café Ganador"),
-                new Coffee("Café Lareño"),
-                new Coffee("Café Três Pontas")
-        ));
+        coffeeRepository.saveAll(List.of(new Coffee("Café Cereza"), new Coffee("Café Ganador"), new Coffee("Café Lareño"), new Coffee("Café Três Pontas")));
     }
 }
 
@@ -113,12 +108,9 @@ class RestApiDemoController {
     }
 
     @PutMapping("/{id}")
-    ResponseEntity<Coffee> putCoffee(@PathVariable String id,
-                                     @RequestBody Coffee coffee) {
+    ResponseEntity<Coffee> putCoffee(@PathVariable String id, @RequestBody Coffee coffee) {
 
-        return (coffeeRepository.existsById(id))
-                ? new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.OK)
-                : new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.CREATED);
+        return (coffeeRepository.existsById(id)) ? new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.OK) : new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
@@ -169,7 +161,8 @@ class Droid {
     }
 }
 
-interface CoffeeRepository extends CrudRepository<Coffee, String> {}
+interface CoffeeRepository extends CrudRepository<Coffee, String> {
+}
 
 @Entity
 class Coffee {
