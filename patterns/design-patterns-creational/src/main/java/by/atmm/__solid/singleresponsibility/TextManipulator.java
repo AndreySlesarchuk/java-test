@@ -34,4 +34,5 @@ public class TextManipulator {
     public void printText() {
         System.out.println(textManipulator.getText());
     }*/
+
 }

@@ -20,4 +20,5 @@ public class TextPrinter {
     public void printRangeOfCharacters(int startingIndex, int endIndex) {
         System.out.println(textManipulator.getText().substring(startingIndex, endIndex));
     }
+
 }
