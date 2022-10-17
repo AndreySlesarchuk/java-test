@@ -19,7 +19,6 @@
         <module>pdf</module>
         <module>patterns</module>
         <module>sbur-jpa</module>
-        <module>sbur-redis</module>
         <module>planefinder</module>
         <module>sbur-rest-demo</module>
         <module>spring_course</module>
