@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class BMICalculatorTest {
 
-    private String environment = "dev";
+    private final String environment = "dev";
 
     @BeforeAll
     static void beforeAll() {
