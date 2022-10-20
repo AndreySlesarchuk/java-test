@@ -3,35 +3,35 @@ package by.atmm.reduceIfelse;
 import by.atmm.reducingIfElse.AddCommand;
 import by.atmm.reducingIfElse.Calculator;
 import by.atmm.reducingIfElse.Operator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CalculatorUnitTest {
+class CalculatorUnitTest {
 
     @Test
-    public void whenCalculateUsingStringOperator_thenReturnCorrectResult() {
+    void whenCalculateUsingStringOperator_thenReturnCorrectResult() {
         Calculator calculator = new Calculator();
         int result = calculator.calculate(3, 4, "add");
         assertEquals(7, result);
     }
 
     @Test
-    public void whenCalculateUsingEnumOperator_thenReturnCorrectResult() {
+    void whenCalculateUsingEnumOperator_thenReturnCorrectResult() {
         Calculator calculator = new Calculator();
         int result = calculator.calculate(3, 4, Operator.valueOf("ADD"));
         assertEquals(7, result);
     }
 
     @Test
-    public void whenCalculateUsingCommand_thenReturnCorrectResult() {
+    void whenCalculateUsingCommand_thenReturnCorrectResult() {
         Calculator calculator = new Calculator();
         int result = calculator.calculate(new AddCommand(3, 7));
         assertEquals(10, result);
     }
 
     @Test
-    public void whenCalculateUsingFactory_thenReturnCorrectResult() {
+    void whenCalculateUsingFactory_thenReturnCorrectResult() {
         Calculator calculator = new Calculator();
         int result = calculator.calculateUsingFactory(3, 4, "add");
         assertEquals(7, result);

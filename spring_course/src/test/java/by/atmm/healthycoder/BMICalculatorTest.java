@@ -3,6 +3,8 @@ package by.atmm.healthycoder;
 import by.atmm.java.healthycoder.BMICalculator;
 import by.atmm.java.healthycoder.Coder;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -34,6 +36,56 @@ class BMICalculatorTest {
     @AfterEach
     void afterEach() {
         System.out.println("A unit test was finished.");
+    }
+
+    @Nested
+    @DisplayName("^^^^^ sample inner class display name")
+    //@Disabled
+    class FindCoderWithWorstBMITests {
+        @Test
+        @DisplayName(">>>>> sample method display name")
+        @DisabledOnOs(OS.WINDOWS)
+        void should_ReturnCoderWithWorstBMI_When_CoderListNotEmpty() {
+            // given
+            List<Coder> coders = new ArrayList<>();
+            coders.add(new Coder(1.80, 60.0));
+            coders.add(new Coder(1.82, 98.0));
+            coders.add(new Coder(1.82, 64.7));
+
+            // when
+            Coder coderWorstBMI = BMICalculator.findCoderWithWorstBMI(coders);
+
+            // then
+            assertAll(() -> assertEquals(1.82, coderWorstBMI.getHeight()), () -> assertEquals(98.0, coderWorstBMI.getWeight()));
+        }
+
+        @Test
+        void should_ReturnCoderWithWorstBMIIn50Ms_When_CoderListHas10000Elements() {
+            // given
+            assumeTrue(BMICalculatorTest.this.environment.equals("prod"));
+            List<Coder> coders = new ArrayList<>();
+            for (int i = 0; i < 10000; i++) {
+                coders.add(new Coder(1.0 + 1, 10.0 + i));
+            }
+
+            // when
+            Executable executable = () -> BMICalculator.findCoderWithWorstBMI(coders);
+
+            // then
+            assertTimeout(Duration.ofMillis(50), executable);
+        }
+
+        @Test
+        void should_ReturnNullWorstBMICoder_When_CoderListEmpty() {
+            // given
+            List<Coder> coders = new ArrayList<>();
+
+            // when
+            Coder coderWorstBMI = BMICalculator.findCoderWithWorstBMI(coders);
+
+            // then
+            assertNull(coderWorstBMI);
+        }
     }
 
     @Nested
@@ -81,52 +133,6 @@ class BMICalculatorTest {
         }
 
 
-    }
-
-    @Nested
-    class FindCoderWithWorstBMITests {
-        @Test
-        void should_ReturnCoderWithWorstBMI_When_CoderListNotEmpty() {
-            // given
-            List<Coder> coders = new ArrayList<>();
-            coders.add(new Coder(1.80, 60.0));
-            coders.add(new Coder(1.82, 98.0));
-            coders.add(new Coder(1.82, 64.7));
-
-            // when
-            Coder coderWorstBMI = BMICalculator.findCoderWithWorstBMI(coders);
-
-            // then
-            assertAll(() -> assertEquals(1.82, coderWorstBMI.getHeight()), () -> assertEquals(98.0, coderWorstBMI.getWeight()));
-        }
-
-        @Test
-        void should_ReturnCoderWithWorstBMIIn50Ms_When_CoderListHas10000Elements() {
-            // given
-            assumeTrue(BMICalculatorTest.this.environment.equals("prod"));
-            List<Coder> coders = new ArrayList<>();
-            for (int i = 0; i < 10000; i++) {
-                coders.add(new Coder(1.0 + 1, 10.0 + i));
-            }
-
-            // when
-            Executable executable = () -> BMICalculator.findCoderWithWorstBMI(coders);
-
-            // then
-            assertTimeout(Duration.ofMillis(50), executable);
-        }
-
-        @Test
-        void should_ReturnNullWorstBMICoder_When_CoderListEmpty() {
-            // given
-            List<Coder> coders = new ArrayList<>();
-
-            // when
-            Coder coderWorstBMI = BMICalculator.findCoderWithWorstBMI(coders);
-
-            // then
-            assertNull(coderWorstBMI);
-        }
     }
 
     @Nested

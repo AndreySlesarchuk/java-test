@@ -4,10 +4,10 @@ import by.atmm.reducingIfElse.Expression;
 import by.atmm.reducingIfElse.Operator;
 import by.atmm.reducingIfElse.Result;
 import by.atmm.reducingIfElse.RuleEngine;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class RuleEngineUnitTest {
 
