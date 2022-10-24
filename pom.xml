@@ -20,8 +20,8 @@
         <module>patterns</module>
         <module>sbur-jpa</module>
         <module>sbur-rest-demo</module>
+        <module>spring_boot</module>
         <module>spring_course</module>
-        <module>spring_course_mvc</module>
     </modules>
 
     <dependencies>
