@@ -1,0 +1,54 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  security:
+    user:
+      name: user
+      password: password
+  datasource:
+    url: jdbc:mysql://localhost:3306/my_db?useSSL=false&serverTimezone=UTC
+    username: bestuser
+    password: bestuser
+
+
+# server
+server:
+  port: 8181
+  servlet:
+    context-path: /rest
+
+# actuator
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, mapping, beans
+
+# custom properties
+info:
+  app:
+    name: Spring Boot, Data, Rest
+    version: 1.0.0
+    description: Spring boot REST application
+  author: Andrey Slesarchuk
+
+---
+# test
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:mem:my_db;
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    show-sql: true
+server:
+  port: 8182
+  servlet:
+    context-path: /rest
