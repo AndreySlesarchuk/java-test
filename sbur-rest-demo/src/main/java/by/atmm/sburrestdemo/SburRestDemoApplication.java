@@ -43,7 +43,8 @@ class DataLoader {
 
     @PostConstruct
     private void loadData() {
-        coffeeRepository.saveAll(List.of(new Coffee("Café Cereza"), new Coffee("Café Ganador"), new Coffee("Café Lareño"), new Coffee("Café Três Pontas")));
+        coffeeRepository.saveAll(List.of(new Coffee("Café Cereza"), new Coffee("Café Ganador"),
+                new Coffee("Café Lareño"), new Coffee("Café Três Pontas")));
     }
 }
 
@@ -142,7 +143,8 @@ class Greeting {
 }
 
 class Droid {
-    private String id, description;
+    private String id;
+    private String description;
 
     public String getId() {
         return id;
