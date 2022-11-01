@@ -1,17 +1,17 @@
 package by.atmm.java.__early.initializer;
 
 /**
- * Порядок инициализации таков:
- * [1]. Статические поля базового класса;
- * [2]. Статический блок инициализации базового класса;
- * [3]. Статические поля производного класса;
- * [4]. Статический блок инициализации производного класса;
- * [5]. Поля (Глобальные переменные) базового класса;
- * [6]. Нестатический блок инициализации базового класса;
- * [7]. Конструктор базового класса [если у родителя нет конструктора без аргументов, то код приведёт к ошибке компиляции];
- * [8]. Поля (Глобальные переменные)  производного класса;
- * [9]. Нестатический блок инициализации производного класса;
- * [10]. Конструктор производного класса;
+ * The initialization order is:
+ * [1]. Static Fields of Base Class;
+ * [2]. Static base class initialization block;
+ * [3]. Static fields of the derived class;
+ * [4]. Static derivative class initialization block;
+ * [5]. Fields (Global variables) of base class;
+ * [6]. Non-static block initialization of the base class;
+ * [7]. Base class constructor [if the parent does not have a constructor without arguments, the code will result in a compilation error];
+ * [8]. Fields (Global variables)  derived class;
+ * [9]. Non-static block of derivative class initialization;
+ * [10]. Derivative constructor;
  */
 
 class Base {
