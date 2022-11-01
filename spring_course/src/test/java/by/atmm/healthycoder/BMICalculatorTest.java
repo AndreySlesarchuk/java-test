@@ -56,7 +56,9 @@ class BMICalculatorTest {
             Coder coderWorstBMI = BMICalculator.findCoderWithWorstBMI(coders);
 
             // then
-            assertAll(() -> assertEquals(1.82, coderWorstBMI.getHeight()), () -> assertEquals(98.0, coderWorstBMI.getWeight()));
+            assertAll(
+                    () -> assertEquals(1.82, coderWorstBMI.getHeight()),
+                    () -> assertEquals(98.0, coderWorstBMI.getWeight()));
         }
 
         @Test
