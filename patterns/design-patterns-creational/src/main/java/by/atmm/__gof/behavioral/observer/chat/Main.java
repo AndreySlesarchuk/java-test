@@ -3,7 +3,7 @@ package by.atmm.__gof.behavioral.observer.chat;
 /**
  * Created by Andrey Slesarchuk on 07/26/2020.
  */
-public class App {
+public class Main {
   public static void main(String[] args) {
     User user = new User();
     Admin admin = new Admin();
