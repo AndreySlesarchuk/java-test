@@ -1,11 +1,10 @@
-package by.atmm.java.activemq;
+package by.atmm.java.activemq.topics;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.json.JSONObject;
 
 import javax.jms.*;
 
-public class RealTimeExample {
+public class Publisher {
 
     public static void main(String[] args) {
 
@@ -15,20 +14,14 @@ public class RealTimeExample {
         try {
             Connection connection = factory.createConnection();
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Destination destination = session.createQueue("demo");
+            Destination destination = session.createTopic("Demo-Topic");
 
-            JSONObject json = new JSONObject();
-            json.put("from date", "2022-11-02");
-            json.put("from date", "2022-11-02");
-            json.put("email", "abc@gmail.com");
-            json.put("query", "select * from data");
-
-            TextMessage textMessage = session.createTextMessage(json.toString());
+            TextMessage textMessage = session.createTextMessage("Message for topic 2");
 
             MessageProducer producer = session.createProducer(destination);
             producer.send(textMessage);
 
-            System.out.println("Message Published");
+            System.out.println("Message published");
 
             session.close();
             connection.close();
