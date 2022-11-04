@@ -1,4 +1,4 @@
-package by.atmm.java.activemq;
+package by.atmm.java.activemq.queues;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
