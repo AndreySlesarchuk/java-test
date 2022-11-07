@@ -7,11 +7,10 @@ import java.util.List;
  * Created by Andrey Slesarchuk on 07/26/2020.
  */
 public class Account implements Subject{
-  private List<Observer> observers = new ArrayList<Observer>();
 
-  private AccountOwner accountOwner;
-
-  private String accountNumber;
+  private final List<Observer> observers = new ArrayList<>();
+  private final AccountOwner accountOwner;
+  private final String accountNumber;
 
   private int amount;
 

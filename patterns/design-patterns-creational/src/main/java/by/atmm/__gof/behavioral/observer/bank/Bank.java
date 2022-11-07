@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Mike Ramanovich, Andrey Slesarchuk on 07/26/2020.
+ * Created by Andrey Slesarchuk on 07/26/2020.
  */
 public class Bank {
   private static int accountNumberCounter;
@@ -14,6 +14,7 @@ public class Bank {
   private final Government government = new Government();
 
   public String addAccount(String accountOwnerName) {
+
     AccountOwner accountOwner = new AccountOwner(accountOwnerName);
     Account account = new Account(accountOwner, "account" + accountNumberCounter++);
     account.register(government);
