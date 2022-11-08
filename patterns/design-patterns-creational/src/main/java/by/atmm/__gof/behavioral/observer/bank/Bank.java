@@ -9,7 +9,7 @@ import java.util.Map;
 public class Bank {
   private static int accountNumberCounter;
 
-  private final Map<String, Account> accounts = new HashMap<String, Account>();
+  private final Map<String, Account> accounts = new HashMap<>();
 
   private final Government government = new Government();
 
