@@ -4,9 +4,11 @@ package by.atmm.__gof.behavioral.visitor.biha;
  * Created by Slesarchuk on 05/26/2020.
  */
 public class Biha {
+
     private Chairman chairman;
 
     public void initialize() {
+
         chairman = createChairman();
         Head head1 = createHead("Head1", 700, 1100);
         Head head2 = createHead("Head2", 500, 1000);
@@ -21,6 +23,7 @@ public class Biha {
         head2.addEmployee(employee3);
         head2.addEmployee(employee4);
         head1.getEmployees();
+
     }
 
     private Chairman createChairman() {
