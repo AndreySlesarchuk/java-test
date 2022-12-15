@@ -16,7 +16,7 @@ import com.itextpdf.text.pdf.parser.TextExtractionStrategy;
 public class PDF2WordExample {
 
 	//private static final String FILENAME = DIR_INPUT + "pdf.pdf";
-	private static final String FILENAME = "d:/__resources/input/pdf.pdf";
+	private static final String FILENAME = "c:/__projects/__resources/input/pdf.pdf";
 
 	public static void main(String[] args) {
 		try {
@@ -42,7 +42,7 @@ public class PDF2WordExample {
 			run.addBreak(BreakType.PAGE);
 		}
 		//FileOutputStream out = new FileOutputStream("src/output/pdf.docx");
-		FileOutputStream out = new FileOutputStream("d:/__resources/output/pdf.docx");
+		FileOutputStream out = new FileOutputStream("c:/__projects/__resources/output/pdf.docx");
 		doc.write(out);
 		out.close();
 		reader.close();

@@ -1,25 +1,14 @@
 package by.atmm.pdf;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.io.RandomAccessFile;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
+import java.io.*;
 
 import static by.atmm.pdf.Config.INPUT_DIR;
 import static by.atmm.pdf.Config.OUTPUT_DIR;
@@ -63,15 +52,15 @@ public class PDF2TextExample {
 
 	private static void generatePDFFromTxt(String filename) throws IOException, DocumentException {
 		Document pdfDoc = new Document(PageSize.A4);
-		PdfWriter.getInstance(pdfDoc, new FileOutputStream(OUTPUT_DIR + "txt.pdf"))
+		PdfWriter.getInstance(pdfDoc, new FileOutputStream("src/output/txt.pdf"))
 				.setPdfVersion(PdfWriter.PDF_VERSION_1_7);
 		pdfDoc.open();
-		
+
 		Font myfont = new Font();
 		myfont.setStyle(Font.NORMAL);
 		myfont.setSize(11);
 		pdfDoc.add(new Paragraph("\n"));
-		
+
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		String strLine;
 		while ((strLine = br.readLine()) != null) {
@@ -79,7 +68,7 @@ public class PDF2TextExample {
 			para.setAlignment(Element.ALIGN_JUSTIFIED);
 			pdfDoc.add(para);
 		}
-		
+
 		pdfDoc.close();
 		br.close();
 	}
