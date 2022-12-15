@@ -14,6 +14,15 @@ public class AggregateOperations {
                 .reduce(0, (subtotal, element) -> subtotal + element);
         System.out.println("Base array: " + numbers + " resultReduce: " + resultReduce); // 21
 
+        int resultReduceInteger = numbers.stream().reduce(0, Integer::sum);
+        System.out.println("Base array: " + numbers + " resultReduceInteger: " + resultReduceInteger); // 21
+
+        List<String> letters = Arrays.asList("a", "b", "c", "d", "e");
+        String resultReduceLetters = letters
+                .stream()
+                .reduce("", (partialString, element) -> partialString + element);
+        System.out.println("Base array: " + letters + " resultReduceLetters: " + resultReduceLetters); // "abcde"
+
 
         List<Employee> employees = List.of(new Employee("A", 3500, 23), new Employee("B", 2000, 30));
         //employees.stream().reduce(B)
