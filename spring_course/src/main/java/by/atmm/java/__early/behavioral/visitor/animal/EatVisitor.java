@@ -4,6 +4,7 @@ package by.atmm.java.__early.behavioral.visitor.animal;
  * Created by Andrey Slesarchuk on 05/25/2020.
  */
 public class EatVisitor implements AnimalVisitor {
+
   @Override
   public void action(Cat cat) {
     System.out.println("eat fish");
