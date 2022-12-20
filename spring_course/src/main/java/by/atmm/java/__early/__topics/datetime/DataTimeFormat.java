@@ -35,5 +35,33 @@ public class DataTimeFormat {
     var fileDatePattern = "ddMMyyyykkmm";
     var fileDateFormatter = DateTimeFormatter.ofPattern(fileDatePattern);
     System.out.println(fileDateFormatter.format(LocalDateTime.now()));
+
+
+    LocalDateTime dt1
+        = LocalDateTime
+        .parse("2018-11-03T12:45:30");
+
+    // Prints the date
+    System.out.println("Original LocalDateTime: "
+        + dt1);
+
+    // Display d1 in different formats
+    // using format() method
+    System.out.println("BASIC_ISO_DATE format: "
+        + (DateTimeFormatter.BASIC_ISO_DATE)
+        .format(dt1));
+    System.out.println("BASIC_ISO_LOCAL_DATE_TIME format: "
+        + (DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+        .format(dt1));
+    System.out.println("ISO_LOCAL_DATE format: "
+        + (DateTimeFormatter.ISO_LOCAL_DATE)
+        .format(dt1));
+    System.out.println("ISO_DATE format: "
+        + (DateTimeFormatter.ISO_DATE)
+        .format(dt1));
+    System.out.println("ISO_LOCAL_TIME format: "
+        + (DateTimeFormatter.ISO_LOCAL_TIME)
+        .format(dt1));
+
   }
 }
