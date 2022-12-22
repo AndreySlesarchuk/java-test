@@ -49,10 +49,8 @@ public class AggregateOperations {
         "Base array: " + letters + " resultReduceUpper: " + resultReduceUpper); // "abcde"
 
     List<Employee> employees = List.of(new Employee("A", 3500, 23), new Employee("B", 2000, 30));
-    //employees.stream().reduce(B)
+
   }
-
-
 }
 
 @Data

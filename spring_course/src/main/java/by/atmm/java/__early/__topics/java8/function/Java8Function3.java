@@ -39,5 +39,4 @@ public class Java8Function3 {
   public Integer getLength(String str) {
     return str.length();
   }
-
 }

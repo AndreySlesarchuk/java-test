@@ -3,7 +3,7 @@ package by.atmm.java.__early.__topics.collections.trees.binarysearchtree;
 import java.util.Arrays;
 
 /**
- * Created by Andrey Slesarchuk on 05/25/2020.
+ * 2022-12-21
  */
 
 public class TreeSort {
