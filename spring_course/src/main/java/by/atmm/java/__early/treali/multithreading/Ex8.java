@@ -1,12 +1,12 @@
 package by.atmm.java.__early.treali.multithreading;
 
-public class Ex8 extends Thread{
+public class Ex8 extends Thread {
+
   public void run() {
     for (int i = 0; i <= 10; i++) {
       try {
         Thread.sleep(100);
-      }
-      catch (InterruptedException e) {
+      } catch (InterruptedException e) {
         e.printStackTrace();
       }
       System.out.println(Thread.currentThread().getName() + " " + i);
@@ -32,8 +32,7 @@ class MyRunnable1 implements Runnable {
     for (int i = 0; i <= 10; i++) {
       try {
         Thread.sleep(100);
-      }
-      catch (InterruptedException e) {
+      } catch (InterruptedException e) {
         e.printStackTrace();
       }
       System.out.println(Thread.currentThread().getName() + " " + i);
