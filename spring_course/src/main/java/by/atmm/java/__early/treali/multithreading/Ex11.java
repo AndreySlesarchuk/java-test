@@ -1,7 +1,9 @@
 package by.atmm.java.__early.treali.multithreading;
 
 public class Ex11 {
+
   volatile static int counter = 0;
+
   public static synchronized void increment() {
     counter++;
   }
@@ -22,7 +24,7 @@ class R implements Runnable {
 
   @Override
   public void run() {
-    for(int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 1000; i++) {
       Ex11.increment();
     }
   }

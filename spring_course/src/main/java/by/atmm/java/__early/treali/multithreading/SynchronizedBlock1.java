@@ -1,6 +1,7 @@
 package by.atmm.java.__early.treali.multithreading;
 
 public class SynchronizedBlock1 {
+
   public static void main(String[] args) {
     MyRunnableImpl2 runnable = new MyRunnableImpl2();
     Thread thread1 = new Thread(runnable);
@@ -13,6 +14,7 @@ public class SynchronizedBlock1 {
 }
 
 class Counter2 {
+
   volatile static int count = 0;
 }
 
@@ -24,7 +26,7 @@ class MyRunnableImpl2 implements Runnable {
 
   private void doWork1() {
     doWork2();
-    synchronized(this) {
+    synchronized (this) {
       Counter2.count++;
       System.out.println(Counter2.count);
     }
@@ -32,7 +34,7 @@ class MyRunnableImpl2 implements Runnable {
 
   @Override
   public void run() {
-    for(int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
       doWork1();
     }
   }
