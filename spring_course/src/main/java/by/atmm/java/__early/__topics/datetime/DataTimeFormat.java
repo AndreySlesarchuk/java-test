@@ -36,7 +36,6 @@ public class DataTimeFormat {
     var fileDateFormatter = DateTimeFormatter.ofPattern(fileDatePattern);
     System.out.println(fileDateFormatter.format(LocalDateTime.now()));
 
-
     LocalDateTime dt1
         = LocalDateTime
         .parse("2018-11-03T12:45:30");

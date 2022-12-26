@@ -14,7 +14,8 @@ public class MyIterator {
     states.add("Испания");
 
     Iterator<String> iter = states.iterator();
-    while(iter.hasNext())
+    while (iter.hasNext()) {
       System.out.println(iter.next());
+    }
   }
 }

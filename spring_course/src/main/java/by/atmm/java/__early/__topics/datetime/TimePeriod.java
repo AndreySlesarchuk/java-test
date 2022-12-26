@@ -14,6 +14,7 @@ import by.atmm.java.__early.__topics.utils.MyDateFormat;
  * Created by Andrey Slesarchuk on 12/14/2020.
  */
 public class TimePeriod {
+
   private Date startTime;
 
   private Date endTime;
@@ -43,7 +44,6 @@ public class TimePeriod {
     }
     System.out.println("Количество дней: " + m1.size());
 
-
     String a1 = "01/10/2021";
     MyDateFormat myDateFormat = new MyDateFormat();
     Date dateString = myDateFormat.getDateFromString(a1);
@@ -65,7 +65,6 @@ public class TimePeriod {
     format.setTimeZone(timeZone);
     Date d1 = format.parse(a1);
     System.out.println("Тестовая дата 5: " + d1);
-
 
     getMonthDays(new Date().getTime());
 

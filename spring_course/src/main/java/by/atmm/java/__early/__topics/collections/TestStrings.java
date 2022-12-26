@@ -8,10 +8,10 @@ public class TestStrings {
     String res = ts.removeSpaces(states);
     System.out.println(res);
 
-    String[] arrayList = new String[] {"Германия", "Франция", "Италия", "Испания"};
+    String[] arrayList = new String[]{"Германия", "Франция", "Италия", "Испания"};
     StringBuilder line = new StringBuilder();
     String splitter = "#";
-    for(int i = 0; i < arrayList.length; i++) {
+    for (int i = 0; i < arrayList.length; i++) {
       line.append(arrayList[i]);
       line.append(splitter);
     }
@@ -36,11 +36,14 @@ public class TestStrings {
   }
 
   private String getSmsServiceText(String smsText, boolean isSendService) {
-    if (isSendService) return smsText;
+    if (isSendService) {
+      return smsText;
+    }
     String fromString = " на ";
     String toString = ". ";
     int indexFrom = smsText.indexOf(fromString);
-    return new StringBuilder(smsText).delete(smsText.indexOf(fromString), smsText.indexOf(toString, indexFrom)).toString();
+    return new StringBuilder(smsText).delete(smsText.indexOf(fromString),
+        smsText.indexOf(toString, indexFrom)).toString();
   }
 
   private String removeSpaces(String str) {
