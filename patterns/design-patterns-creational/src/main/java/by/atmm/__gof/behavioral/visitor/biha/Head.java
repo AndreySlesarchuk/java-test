@@ -8,35 +8,35 @@ import java.util.List;
  */
 public class Head extends Employee {
 
-    private int annualBonus;
+  private int annualBonus;
 
-    private List<Employee> employees = new ArrayList<>();
+  private List<Employee> employees = new ArrayList<>();
 
-    public int getAnnualBonus() {
-        return annualBonus;
+  public int getAnnualBonus() {
+    return annualBonus;
+  }
+
+  public void setAnnualBonus(int annualBonus) {
+    this.annualBonus = annualBonus;
+  }
+
+  @Override
+  public void accept(Visitor visitor) {
+    visitor.action(this);
+    acceptEmployees(visitor);
+  }
+
+  public void acceptEmployees(Visitor visitor) {
+    for (Employee employee : employees) {
+      employee.accept(visitor);
     }
+  }
 
-    public void setAnnualBonus(int annualBonus) {
-        this.annualBonus = annualBonus;
-    }
+  public List<Employee> getEmployees() {
+    return employees;
+  }
 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.action(this);
-        acceptEmployees(visitor);
-    }
-
-    public void acceptEmployees(Visitor visitor) {
-        for (Employee employee : employees) {
-            employee.accept(visitor);
-        }
-    }
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void addEmployee(Employee employee) {
-        employees.add(employee);
-    }
+  public void addEmployee(Employee employee) {
+    employees.add(employee);
+  }
 }

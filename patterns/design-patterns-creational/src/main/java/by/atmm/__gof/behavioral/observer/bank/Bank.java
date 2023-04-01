@@ -7,6 +7,7 @@ import java.util.Map;
  * Created by Andrey Slesarchuk on 07/26/2020.
  */
 public class Bank {
+
   private static int accountNumberCounter;
 
   private final Map<String, Account> accounts = new HashMap<>();

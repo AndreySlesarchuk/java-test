@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Andrey Slesarchuk on 07/26/2020.
  */
-public class Account implements Subject{
+public class Account implements Subject {
 
   private final List<Observer> observers = new ArrayList<>();
   private final AccountOwner accountOwner;
@@ -42,15 +42,18 @@ public class Account implements Subject{
     notifyObservers();
   }
 
-  @Override public void register(Observer observer) {
+  @Override
+  public void register(Observer observer) {
     observers.add(observer);
   }
 
-  @Override public void unregister(Observer observer) {
+  @Override
+  public void unregister(Observer observer) {
     observers.remove(observer);
   }
 
-  @Override public void notifyObservers() {
+  @Override
+  public void notifyObservers() {
     for (Observer observer : observers) {
       observer.update(this);
     }
