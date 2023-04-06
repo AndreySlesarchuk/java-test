@@ -11,28 +11,29 @@ import org.hibernate.cfg.Configuration;
  */
 
 public class Test2 {
-    public static void main(String[] args) {
 
-        try (SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
-                .buildSessionFactory()) {
+  public static void main(String[] args) {
 
-            Employee emp = new Employee("Vasily", "Ivanov", "Sales", 800);
+    try (SessionFactory factory = new Configuration()
+        .configure("hibernate.cfg.xml")
+        .addAnnotatedClass(Employee.class)
+        .buildSessionFactory()) {
 
-            Session session = factory.getCurrentSession();
-            session.beginTransaction();
-            session.save(emp);
-            session.getTransaction().commit();
+      Employee emp = new Employee("Vasily", "Ivanov", "Sales", 800);
 
-            int myId = emp.getId();
-            session = factory.getCurrentSession();
-            session.beginTransaction();
-            Employee employee = session.get(Employee.class, myId);
-            session.getTransaction().commit();
-            System.out.println(employee);
-            System.out.println("Done!");
+      Session session = factory.getCurrentSession();
+      session.beginTransaction();
+      session.save(emp);
+      session.getTransaction().commit();
 
-        }
+      int myId = emp.getId();
+      session = factory.getCurrentSession();
+      session.beginTransaction();
+      Employee employee = session.get(Employee.class, myId);
+      session.getTransaction().commit();
+      System.out.println(employee);
+      System.out.println("Done!");
+
     }
+  }
 }

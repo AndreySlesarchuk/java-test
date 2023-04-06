@@ -13,20 +13,24 @@ import java.util.List;
  */
 
 public class Test3 {
-    public static void main(String[] args) {
 
-        try (SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
-                .buildSessionFactory()) {
-            Session session = factory.getCurrentSession();
-            session.beginTransaction();
-            List<Employee> emps = session.createQuery("FROM Employee WHERE name = 'Andrey'").getResultList();
+  public static void main(String[] args) {
 
-            for (Employee e : emps)
-                System.out.println(e);
-            session.getTransaction().commit();
-            System.out.println("Done!");
-        }
+    try (SessionFactory factory = new Configuration()
+        .configure("hibernate.cfg.xml")
+        .addAnnotatedClass(Employee.class)
+        .buildSessionFactory()) {
+      Session session = factory.getCurrentSession();
+      session.beginTransaction();
+      List<Employee> emps = session.createQuery("FROM Employee WHERE name = 'Andrey'")
+          .getResultList();
+
+      for (Employee e : emps) {
+        System.out.println(e);
+      }
+      session.getTransaction().commit();
+      System.out.println("Done!");
     }
+  }
+
 }
