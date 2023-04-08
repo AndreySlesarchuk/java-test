@@ -8,34 +8,36 @@ package by.atmm.java.jmm;
  */
 
 public class Main {
-    public static void main(String[] args) {
-        Integer localValue = 5;
-        calculate(localValue);
-        System.out.println("localValue: " + localValue);
 
-        Main main = new Main();
-        main.start();
-    }
+  public static void main(String[] args) {
+    Integer localValue = 5;
+    calculate(localValue);
+    System.out.println("localValue: " + localValue);
 
-    public void start() {
-        String last = "Z";
-        Container container = new Container();
-        container.setInitial("C");
-        another(container, last);
-        System.out.println(container.getInitial());
-    }
+    Main main = new Main();
+    main.start();
+  }
 
-    public void another(Container initialHolder, String newInitial) {
-        newInitial.toLowerCase();
-        initialHolder.setInitial("B");
-        Container initial2 = new Container();
-        initialHolder = initial2;
-        System.out.println(initialHolder.getInitial());
-        System.out.println(newInitial);
-    }
+  public void start() {
+    String last = "Z";
+    Container container = new Container();
+    container.setInitial("C");
+    another(container, last);
+    System.out.println(container.getInitial());
+  }
 
-    public static void calculate(Integer calcValue) {
-        calcValue = calcValue * 100;
-        System.out.println("calcValue: " + calcValue);
-    }
+  public void another(Container initialHolder, String newInitial) {
+    newInitial.toLowerCase();
+    initialHolder.setInitial("B");
+    Container initial2 = new Container();
+    initialHolder = initial2;
+    System.out.println(initialHolder.getInitial());
+    System.out.println(newInitial);
+  }
+
+  public static void calculate(Integer calcValue) {
+    calcValue = calcValue * 100;
+    System.out.println("calcValue: " + calcValue);
+  }
+
 }
