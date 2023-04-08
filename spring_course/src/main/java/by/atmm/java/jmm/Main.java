@@ -3,8 +3,8 @@ package by.atmm.java.jmm;
 /**
  * @author Andrey Slesarchuk
  * @date 2022-06-21
- * <p>
- * https://youtu.be/7IkpIQc8OCw
+ *
+ *  <a href="https://youtu.be/7IkpIQc8OCw">...</a>
  */
 
 public class Main {
