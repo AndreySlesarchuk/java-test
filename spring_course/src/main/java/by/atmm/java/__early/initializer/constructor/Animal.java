@@ -1,4 +1,4 @@
-package by.atmm.java.__early.initializer;
+package by.atmm.java.__early.initializer.constructor;
 
 public abstract class Animal {
     private final String fullName;

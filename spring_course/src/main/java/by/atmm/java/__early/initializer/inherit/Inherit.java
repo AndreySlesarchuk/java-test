@@ -1,4 +1,4 @@
-package by.atmm.java.__early.initializer;
+package by.atmm.java.__early.initializer.inherit;
 
 /**
  * The initialization order is:
