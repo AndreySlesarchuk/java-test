@@ -20,6 +20,7 @@
         <module>patterns</module>
         <module>sbur-jpa</module>
         <module>sbur-rest-demo</module>
+        <module>ratelimiter</module>
         <module>spring_boot</module>
         <module>spring_course</module>
     </modules>
