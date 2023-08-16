@@ -5,6 +5,7 @@ import by.atmm.ratelimiter.model.Request;
 import by.atmm.ratelimiter.model.TimeFrame;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 
@@ -22,11 +23,7 @@ class SlidingWindowRateLimiterTest {
   void should_reject_request_if_more_than_limit() {
     // given
     var time = of(2000, 1, 1, 1, 1);
-    var userIdToRequests = new HashMap<String, UserRequests>();
-    UserRequests userRequests = new UserRequests();
-    userRequests.add(time.plusSeconds(1L));
-    userRequests.add(time.plusSeconds(2L));
-    userIdToRequests.put(USER_ID, userRequests);
+    var userIdToRequests = createTwoMockRequests(time, USER_ID);
     var limit = 2;
     var timeFrame = new TimeFrame(1L, ChronoUnit.MINUTES);
     var request = new Request(time, USER_ID);
@@ -40,15 +37,21 @@ class SlidingWindowRateLimiterTest {
 
   }
 
+  private static HashMap<String, UserRequests> createTwoMockRequests(LocalDateTime time, String userId) {
+    var userIdToRequests = new HashMap<String, UserRequests>();
+    UserRequests userRequests = new UserRequests();
+    userRequests.add(time.plusSeconds(1L));
+    userRequests.add(time.plusSeconds(2L));
+    userIdToRequests.put(userId, userRequests);
+    return userIdToRequests;
+  }
+
   @Test
   void should_allow_request_if_less_than_limit() {
     // given
     var time = of(2000, 1, 1, 1, 0);
-    var userIdToRequests = new HashMap<String, UserRequests>();
-    UserRequests userRequests = new UserRequests();
-    userRequests.add(time.plusSeconds(1L));
-    userIdToRequests.put(USER_ID, userRequests);
-    var limit = 2;
+    var userIdToRequests = createTwoMockRequests(time, USER_ID);
+    var limit = 3;
     var timeFrame = new TimeFrame(1L, ChronoUnit.MINUTES);
     Request request = new Request(time, USER_ID);
     rateLimiter = new SlidingWindowRateLimiter(limit, timeFrame, userIdToRequests, () -> time);
@@ -57,7 +60,7 @@ class SlidingWindowRateLimiterTest {
     boolean hit = rateLimiter.hit(request);
 
     // then
-    assertTrue(hit);
+    assertTrue(hit, "Expected limit was less than count of requests, but limiter rejected request");
 
   }
 }
