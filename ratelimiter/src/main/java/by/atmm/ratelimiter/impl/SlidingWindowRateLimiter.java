@@ -4,9 +4,9 @@ import by.atmm.ratelimiter.RateLimiter;
 import by.atmm.ratelimiter.model.Request;
 import by.atmm.ratelimiter.model.TimeFrame;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class SlidingWindowRateLimiter extends RateLimiter {
 
@@ -15,7 +15,7 @@ public class SlidingWindowRateLimiter extends RateLimiter {
   private final DateTimeService dateTimeService;
 
   public SlidingWindowRateLimiter(int limit, TimeFrame timeFrame, DateTimeService dateTimeService) {
-    this(limit, timeFrame, new HashMap<>(), dateTimeService);
+    this(limit, timeFrame, new ConcurrentHashMap<>(), dateTimeService);
   }
 
   SlidingWindowRateLimiter(int limit, TimeFrame timeFrame, Map<String, UserRequests> storage, DateTimeService dateTimeService) {
@@ -29,11 +29,13 @@ public class SlidingWindowRateLimiter extends RateLimiter {
     Objects.requireNonNull(request);
 
     var userId = request.getUserId();
-    var userRequests = storage.get(userId);
     var current = dateTimeService.currentTime();
-    userRequests.removeExpiredRequests(current, timeFrame);
-    userRequests.add(request.getTime());
-    return userRequests.size() <= rateLimit;
-
+    // atomic
+    var userRequests = storage.compute(userId, (k, v) -> v == null ? new UserRequests() : v);
+    synchronized (userRequests) {
+      userRequests.removeExpiredRequests(current, timeFrame);
+      userRequests.add(request.getTime());
+      return userRequests.size() <= rateLimit;
+    }
   }
 }
