@@ -34,6 +34,13 @@ class SlidingWindowRateLimiterConcurrencyTest {
     // given
     var threadsCount = 10;
     var limit = 5;
+    var requestResults = makeParallelRequests(threadsCount, limit);
+
+    // then
+    assertThat(requestResults).containsExactly(entry(false, 5L), entry(true, 5L));
+  }
+
+  private Map<Boolean, Long> makeParallelRequests(int threadsCount, int limit) {
     var executor = Executors.newFixedThreadPool(threadsCount);
     var timeFrame = new TimeFrame(1L, ChronoUnit.MINUTES);
     var time = of(2000, 1, 1, 1, 1);
@@ -54,9 +61,7 @@ class SlidingWindowRateLimiterConcurrencyTest {
     executor.shutdown();
     Unchecked.runnable(() -> executor.awaitTermination(1L, TimeUnit.MINUTES));
     var requestResults = groupRequestsBySuccess(list);
-
-    // then
-    assertThat(requestResults).containsExactly(entry(false, 5L), entry(true, 5L));
+    return requestResults;
   }
 
   private static Map<Boolean, Long> groupRequestsBySuccess(ArrayList<Future<Boolean>> list) {

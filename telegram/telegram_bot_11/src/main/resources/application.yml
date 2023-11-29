@@ -2,6 +2,7 @@ telegram:
   bot:
     name: ${TELEGRAM_BOT_NAME}
     token: ${TELEGRAM_BOT_TOKEN}
+    testtoken: ${TELEGRAM_BOT_TEST_TOKEN}
 
 cbr:
   currency:

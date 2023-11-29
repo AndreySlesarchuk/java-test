@@ -1,16 +1,13 @@
 package by.atmm.healthycoder;
 
-import by.atmm.java.healthycoder.BMICalculator;
-import by.atmm.java.healthycoder.Coder;
+import by.atmm.java.__tests.healthycoder.BMICalculator;
+import by.atmm.java.__tests.healthycoder.Coder;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
-
 
 import java.time.Duration;
 import java.util.ArrayList;
