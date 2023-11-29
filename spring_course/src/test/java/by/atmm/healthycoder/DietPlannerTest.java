@@ -1,13 +1,12 @@
 package by.atmm.healthycoder;
 
-import by.atmm.java.healthycoder.Coder;
-import by.atmm.java.healthycoder.DietPlan;
-import by.atmm.java.healthycoder.DietPlanner;
-import by.atmm.java.healthycoder.Gender;
+import by.atmm.java.__tests.healthycoder.Coder;
+import by.atmm.java.__tests.healthycoder.DietPlan;
+import by.atmm.java.__tests.healthycoder.DietPlanner;
+import by.atmm.java.__tests.healthycoder.Gender;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
