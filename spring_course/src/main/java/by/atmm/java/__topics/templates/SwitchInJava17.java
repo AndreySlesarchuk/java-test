@@ -4,7 +4,12 @@ public class SwitchInJava17 {
 
   public static void main(String[] args) {
     System.out.println("Test01: ".concat(test01("B")));
-    System.out.println("Test02: ".concat(test02(13).toString()));
+    System.out.println("Test02: ".concat(test02("13").toString()));
+    System.out.println("Test03: ".concat(test03(Number.TWO)));
+  }
+
+  public enum Number {
+    ONE, TWO, THREE, FOUR;
   }
 
   public static String test01(String str) {
@@ -25,6 +30,17 @@ public class SwitchInJava17 {
     };
   }
 
-
+  // Since Java 14, the yield keyword within switch expressions gives us a better approach.
+  // https://www.baeldung.com/java-yield-switch
+  public static String test03(Number number) {
+    return switch (number) {
+      case ONE:
+        yield "Got a 1";
+      case TWO:
+        yield "Got a 2";
+      default:
+        yield "More than 2";
+    };
+  }
 
 }
