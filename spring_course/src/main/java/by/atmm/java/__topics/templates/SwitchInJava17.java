@@ -2,6 +2,8 @@ package by.atmm.java.__topics.templates;
 
 public class SwitchInJava17 {
 
+  // Switch expression
+  // https://www.baeldung.com/java-switch-pattern-matching
   public static void main(String[] args) {
     System.out.println("Test01: ".concat(test01("B")));
     System.out.println("Test02: ".concat(test02("13").toString()));
