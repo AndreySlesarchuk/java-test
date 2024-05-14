@@ -1,4 +1,4 @@
-package by.atmm.java.__topics.objects;
+package by.atmm.java.__topics.objects.clone;
 
 public class Address {
 

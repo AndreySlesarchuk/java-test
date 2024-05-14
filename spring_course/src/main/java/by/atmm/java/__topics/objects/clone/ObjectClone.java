@@ -1,4 +1,4 @@
-package by.atmm.java.__topics.objects;
+package by.atmm.java.__topics.objects.clone;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
