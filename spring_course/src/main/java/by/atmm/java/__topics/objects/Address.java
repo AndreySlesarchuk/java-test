@@ -17,7 +17,6 @@ public class Address {
     return this;
   }
 
-
   public Address setCity(String city) {
     this.city = city;
     return this;
