@@ -17,19 +17,19 @@ public class ObjectClone {
     System.out.println(original.equals(copy)); // The result depends on the implementation of the method equals()
 
 
-    Address address = new Address("Downing St 10", "London", "England");
+//    Address address = new Address("Downing St 10", "London", "England");
+    Address address = new Address().setCountry("England").setCity("London").setStreet("Downing St 10");
     User primeMinister = new User("Prime", "Minister", address);
 
     User shallowCopy = new User(
         primeMinister.getFirstName(), primeMinister.getLastName(), primeMinister.getAddress());
 
-    primeMinister.getAddress().setStreet("Downing St 13");
+    primeMinister.getAddress().setStreet("221b Backer Street");
 
     System.out.println(primeMinister != shallowCopy); // Will output true, since these are different objects
-    System.out.println(primeMinister.getClass() == shallowCopy.getClass()); // Will output true, since the type is the same
     System.out.println(primeMinister.equals(shallowCopy)); // The result depends on the implementation of the method equals()
-    System.out.println(primeMinister.getAddress()); // "Downing St 13"
-    System.out.println(shallowCopy.getAddress()); // "Downing St 13"
+    System.out.println(primeMinister.getAddress()); // Street is 221b Backer Street
+    System.out.println(shallowCopy.getAddress()); // Street is 221b Backer Street
 
   }
 }
