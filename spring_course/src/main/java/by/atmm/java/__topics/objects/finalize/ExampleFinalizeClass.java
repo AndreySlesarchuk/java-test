@@ -11,7 +11,8 @@ public class ExampleFinalizeClass {
     try {
       // Releasing resources or other finalization
       MyLog.log("Finalization of object resources");
-    } finally {
+    }
+    finally {
       super.finalize();
     }
   }

@@ -10,56 +10,55 @@ import java.util.Optional;
 @FreeBuilder
 public interface Employee {
 
-    String getName();
+  String getName();
 
-    int getAge();
+  int getAge();
 
-    String getDepartment();
+  String getDepartment();
 
-    String getRole();
+  String getRole();
 
-    String getSupervisorName();
+  String getSupervisorName();
 
-    String getDesignation();
+  String getDesignation();
 
-    String getEmail();
+  String getEmail();
 
-    long getPhoneNumber();
+  long getPhoneNumber();
 
-    Optional<Boolean> getPermanent();
+  Optional<Boolean> getPermanent();
 
-    Optional<String> getDateOfJoining();
+  Optional<String> getDateOfJoining();
 
-    @Nullable
-    String getCurrentProject();
+  @Nullable
+  String getCurrentProject();
 
-    Address getAddress();
+  Address getAddress();
 
-    List<Long> getAccessTokens();
+  List<Long> getAccessTokens();
 
-    Map<String, Long> getAssetsSerialIdMapping();
+  Map<String, Long> getAssetsSerialIdMapping();
 
-    Optional<Double> getSalaryInUSD();
+  Optional<Double> getSalaryInUSD();
 
+  class Builder extends Employee_Builder {
 
-    class Builder extends Employee_Builder {
-
-        public Builder() {
-            // setting default value for department
-            setDepartment("Builder Pattern");
-        }
-
-        @Override
-        public Builder setEmail(String email) {
-            if (checkValidEmail(email))
-                return super.setEmail(email);
-            else
-                throw new IllegalArgumentException("Invalid email");
-
-        }
-
-        private boolean checkValidEmail(String email) {
-            return email.contains("@");
-        }
+    public Builder() {
+      // setting default value for department
+      setDepartment("Builder Pattern");
     }
+
+    @Override
+    public Builder setEmail(String email) {
+      if (checkValidEmail(email))
+        return super.setEmail(email);
+      else
+        throw new IllegalArgumentException("Invalid email");
+
+    }
+
+    private boolean checkValidEmail(String email) {
+      return email.contains("@");
+    }
+  }
 }
