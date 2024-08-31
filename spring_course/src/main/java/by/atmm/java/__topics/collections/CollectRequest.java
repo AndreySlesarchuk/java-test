@@ -1,9 +1,9 @@
 package by.atmm.java.__topics.collections;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import by.atmm.java.__topics.utils.Watch;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 public class CollectRequest {
 

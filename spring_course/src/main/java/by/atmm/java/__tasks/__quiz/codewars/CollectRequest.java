@@ -1,9 +1,10 @@
 package by.atmm.java.__tasks.__quiz.codewars;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 import java.util.HashMap;
 import java.util.Map;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 public class CollectRequest {
 

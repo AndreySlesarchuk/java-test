@@ -1,6 +1,7 @@
 package by.atmm.java.__hibernate.hibernate_many_to_many.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

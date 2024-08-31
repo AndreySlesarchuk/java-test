@@ -1,6 +1,6 @@
 package by.atmm.java.__hibernate.hibernate_test.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * @author Andrey Slesarchuk
