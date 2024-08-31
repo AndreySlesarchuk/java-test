@@ -1,6 +1,8 @@
 package by.atmm.java.__hibernate.hibernate_one_to_many_bi.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

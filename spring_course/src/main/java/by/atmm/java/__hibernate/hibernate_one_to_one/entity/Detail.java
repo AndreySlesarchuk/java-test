@@ -1,6 +1,6 @@
 package by.atmm.java.__hibernate.hibernate_one_to_one.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "details")
