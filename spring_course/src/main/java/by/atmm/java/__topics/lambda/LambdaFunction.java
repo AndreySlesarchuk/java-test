@@ -13,5 +13,6 @@ public class LambdaFunction {
 //    Collections.sort(names, Comparator.comparingInt(String::length));
     names.sort(Comparator.comparingInt(String::length));
     names.forEach(System.out::println);
+    Integer a = 10;
   }
 }

@@ -1,4 +1,4 @@
-package by.atmm.java.__topics.interfaces;
+package by.atmm.java.__topics.interfaces.abc;
 
 public class C implements A, B {
 
