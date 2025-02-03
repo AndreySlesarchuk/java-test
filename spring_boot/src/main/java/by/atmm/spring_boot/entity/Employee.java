@@ -1,6 +1,6 @@
 package by.atmm.spring_boot.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "employees")
